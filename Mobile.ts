@@ -1,12 +1,12 @@
 export class Mobile {
-    public name: string;
-    public model: string;
-    public trademark: string;
-    public sdSize: number;
-    public color: string;
-    public is5G: boolean;
-    public cameraNumber: number;
-    public price: number;
+    private name: string;
+    private model: string;
+    private trademark: string;
+    private sdSize: number;
+    private color: string;
+    private is5G: boolean;
+    private cameraNumber: number;
+    private price: number;
 
     constructor() {
         // (name: string, model: string, trademark: string,
@@ -72,6 +72,7 @@ export class Mobile {
     }
     public printAll(): void {
         console.log(
+            "The characteristics of the movile " + this.name + "are: " +
             "Name - " + this.name + " Model - " + this.model +
             "Trademark - " + this.trademark + " sdSize - " + this.sdSize +
             " Color - " + this.color + " is5G - " + this.is5G +
