@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Mobile_1 = require("./Mobile");
+var Nokia = new Mobile_1.Mobile();
+Nokia.setName("Nokia3210");
+var iphone = new Mobile_1.Mobile();
+iphone.setName("iPhone3G");
+var samsung = new Mobile_1.Mobile();
+samsung.setName("Samsung Galaxy 10");
+Nokia.printAll();
