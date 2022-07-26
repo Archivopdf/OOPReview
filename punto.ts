@@ -1,4 +1,5 @@
 export class Punto {
+
     private x: number;
     private y: number;
 
@@ -70,9 +71,19 @@ export class Punto {
         }
     }
 
-    public calcularMasCercano(puntos: Punto[]): Punto {
+    calcularMasCercano(puntos: Punto[]): void {
+        for (let i = 0; i < puntos.length; i++) {
 
+            for (let j = 0; j < puntos.length - i - 1; i++) {
 
+                if (this.calcularDistancia(puntos[j]) > this.calcularDistancia(puntos[j + 1])) {
+                    let lejano: Punto = puntos[j];
+
+                    puntos[j] = puntos[j + 1];
+                    puntos[j + 1] = lejano;
+                }
+            }
+        }
     }
 
 

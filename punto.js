@@ -29,6 +29,42 @@ var Punto = /** @class */ (function () {
         var oo = [ox, oy];
         return oo;
     };
+    Punto.prototype.calcularDistancia = function (otroPunto) {
+        var px = otroPunto[0];
+        var py = otroPunto[1];
+        px = this.x - (px);
+        py = this.y - (py);
+        var dp = [px, py];
+        return dp;
+    };
+    Punto.prototype.calcularCuadrante = function () {
+        if (this.x == 0 || this.y == 0) {
+            return 0;
+        }
+        else if (this.x > 0 && this.y > 0) {
+            return 1;
+        }
+        else if (this.x < 0 && this.y > 0) {
+            return 2;
+        }
+        else if (this.x < 0 && this.y < 0) {
+            return 3;
+        }
+        else if (this.x > 0 && this.y < 0) {
+            return 4;
+        }
+    };
+    Punto.prototype.calcularMasCercano = function (puntos) {
+        for (var i = 0; i < puntos.length; i++) {
+            for (var j = 0; j < puntos.length - i - 1; i++) {
+                if (this.calcularDistancia(puntos[j]) > this.calcularDistancia(puntos[j + 1])) {
+                    var lejano = puntos[j];
+                    puntos[j] = puntos[j + 1];
+                    puntos[j + 1] = lejano;
+                }
+            }
+        }
+    };
     return Punto;
 }());
 exports.Punto = Punto;
