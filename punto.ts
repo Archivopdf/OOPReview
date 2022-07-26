@@ -81,9 +81,11 @@ export class Punto {
 
                     puntos[j] = puntos[j + 1];
                     puntos[j + 1] = lejano;
+
                 }
             }
         }
+
     }
 
 
