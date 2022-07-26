@@ -66,8 +66,8 @@ export class Mobile {
         console.log(this.cameraNumber);
 
     }
-    public getprice(): void {
-        console.log(this.price);
+    public getprice(): number {
+        return this.price;
 
     }
     public printAll(): void {
